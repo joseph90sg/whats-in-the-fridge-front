@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Cell from "./Cell";
 
-export default function TableRow({ rowData, details }: { rowData: string[], details: string }) {
+export default function TableRow({ rowData, children, expandable = false }: { rowData: string[], children?: React.ReactNode, expandable?: boolean }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -14,9 +14,11 @@ export default function TableRow({ rowData, details }: { rowData: string[], deta
         ))}
       </tr>
 
-      {isExpanded && (
+      {expandable && isExpanded && children && (
         <tr>
-          <Cell colSpan={rowData.length} className="p-4 border-t">{details}</Cell>
+          <Cell colSpan={rowData.length} className="p-4 border-t">
+            {children}
+          </Cell>
         </tr>
       )}
     </>
