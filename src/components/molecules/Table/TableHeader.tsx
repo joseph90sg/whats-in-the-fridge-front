@@ -1,4 +1,4 @@
-import HeadCell from "../../atoms/HeadCell";
+import HeadCell from "../../atoms/table/HeadCell";
 
 export default function TableHeader({ columns }: { columns: string[] }) {
     return (
