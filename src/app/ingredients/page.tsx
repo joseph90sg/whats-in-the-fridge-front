@@ -1,4 +1,4 @@
-import Table from "@/components/molecules/Table/Table";
+import Table from "@/components/molecules/table/Table";
 
 export default function IngredientsPage() {
   const columns = ['Name', 'Category', 'Price'];

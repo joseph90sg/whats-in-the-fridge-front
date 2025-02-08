@@ -1,4 +1,4 @@
-import TableRow from "../../atoms/TableRow";
+import TableRow from "../../atoms/table/TableRow";
 
 interface TableBodyProps {
     columns: string[];

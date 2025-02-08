@@ -1,4 +1,4 @@
-import TableFooter from "../../atoms/TableFooter";
+import TableFooter from "../../atoms/table/TableFooter";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
