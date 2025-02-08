@@ -2,19 +2,25 @@ import TableFooter from "../atoms/TableFooter";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
-export default function Table({ data }: { data: { [key: string]: string }[] }) {
-    const columns = Object.keys(data[0]);
+interface TableProps {
+    columns: string[];
+    values: { [key: string]: string}[]
+};
+
+const Table: React.FC<TableProps> = ({ columns, values }) => {
     return (
         <table className="w-full border-collapse border">
             <TableHeader columns={columns}></TableHeader>
-            <TableBody data={data}></TableBody>
+            <TableBody data={values}></TableBody>
             <TableFooter>
                 <tr>
                     <td colSpan={columns.length} className="text-center">
-                        Total Items: {data.length}
+                        Total Items: {values.length}
                     </td>
                 </tr>
             </TableFooter>
         </table>
     );
-}
+};
+
+export default Table;

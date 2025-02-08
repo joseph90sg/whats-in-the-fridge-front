@@ -1,15 +1,16 @@
-import Cell from "../atoms/Cell";
+import TableRow from "../atoms/TableRow";
 
 export default function TableBody({ data }: { data: { [key: string]: string }[] }) {
     return (
         <tbody>
-            {data.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                    {Object.values(row).map((value, valueIndex) => (
-                        <Cell key={valueIndex}>{value}</Cell>
-                    ))}
-                </tr>
-            ))}
+            {data.map((row, index) => {
+                const rowData = Object.values(row).slice(0, -1);
+                const details = row.details;
+
+                return (
+                    <TableRow key={index} rowData={rowData} details={details}></TableRow>
+                )
+            })}
         </tbody>
     );
 }
