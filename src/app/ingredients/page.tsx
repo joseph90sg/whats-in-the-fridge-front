@@ -1,4 +1,4 @@
-import Table from "@/components/molecules/Table";
+import Table from "@/components/molecules/Table/Table";
 
 export default function IngredientsPage() {
   const columns = ['Name', 'Category', 'Price'];
@@ -6,6 +6,7 @@ export default function IngredientsPage() {
     { Name: "Manzana", Category: "Fruta", Price: "$1", details: "Detalles de la manzana" },
     { Name: "Banana", Category: "Fruta", Price: "$0.1", details: "Detalles de la banana" },
     { Name: "Zanahoria", Category: "Verdura", Price: "$0.5" , details: "Detalles de la zanahoria" },
+    { Name: "Patata", Category: "Tuberculo", Price: "$1.5" },
   ];
 
   return (

@@ -1,4 +1,4 @@
-import TableFooter from "../atoms/TableFooter";
+import TableFooter from "../../atoms/TableFooter";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
@@ -7,11 +7,11 @@ interface TableProps {
     values: { [key: string]: string}[]
 };
 
-const Table: React.FC<TableProps> = ({ columns, values }) => {
+export default function Table({ columns, values }: TableProps) {
     return (
         <table className="w-full border-collapse border">
             <TableHeader columns={columns}></TableHeader>
-            <TableBody data={values}></TableBody>
+            <TableBody columns={columns} values={values}></TableBody>
             <TableFooter>
                 <tr>
                     <td colSpan={columns.length} className="text-center">
@@ -21,6 +21,4 @@ const Table: React.FC<TableProps> = ({ columns, values }) => {
             </TableFooter>
         </table>
     );
-};
-
-export default Table;
+}
