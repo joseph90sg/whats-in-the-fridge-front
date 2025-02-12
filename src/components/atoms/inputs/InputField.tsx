@@ -5,11 +5,12 @@ interface InputFieldProps extends TextInputProps {
   maxLength?: number;
 }
 
-export default function InputField({ id, label, type = "text", isRequired = false, minLength = 0, maxLength }: InputFieldProps) {
+
+export default function InputField({ id, value, onChange, type = "text", isRequired = false, minLength = 0, maxLength }: InputFieldProps) {
   return (
-    <>
-      <label htmlFor={id}>{label} { isRequired && <span className="text-red-500">*</span> }</label>
-      <input id={id} type={type} minLength={minLength} maxLength={maxLength} required={isRequired}></input>
-    </>
+      <input id={id} type={type} minLength={minLength} 
+            maxLength={maxLength} required={isRequired}
+            value={value}
+            onChange={onChange} />
   );
 }
